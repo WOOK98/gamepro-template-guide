@@ -1,0 +1,75 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>X Article Body</title>
+<style>body{margin:0;background:#fff;color:#0f1419;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:18px;line-height:1.75}article{max-width:760px;margin:40px auto 100px;padding:0 28px}p{margin:0 0 1.25em}h1{font-size:34px;line-height:1.3;margin:0 0 1em}h2{font-size:28px;line-height:1.35;margin:2em 0 .7em;font-weight:800}h3{font-size:22px;line-height:1.4;margin:1.6em 0 .55em;font-weight:750}strong{font-weight:750}em{color:#536471}blockquote{margin:1.6em 0;padding:4px 0 4px 20px;border-left:4px solid #1d9bf0;font-size:21px;line-height:1.6;font-weight:650}ul,ol{margin:.2em 0 1.4em;padding-left:1.6em}li{margin:.45em 0}hr{border:0;border-top:1px solid #cfd9de;margin:2.2em 0}pre{white-space:pre-wrap;background:#f7f9f9;border:1px solid #eff3f4;border-radius:10px;padding:16px 18px;margin:1.2em 0;font-size:15px;line-height:1.6}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}a{color:#1d9bf0;text-decoration:underline}</style>
+</head><body><article><p>最近我整理完了两套免费的商店模板。</p>
+<p>一套是 Shopify Theme，适合想直接管理商品、库存、订单和支付的人；另一套是独立的 Next.js Storefront，适合想看源码、改页面，或者拿来学习和二次开发的人。</p>
+<p>我还做了一份 15 页的使用演示，把安装、修改、图片生成和上线检查都走了一遍。</p>
+<p>做到最后，我发现搭出页面只是最容易的一步。</p>
+<p>一个网站能打开，和一个商店能让真实顾客安全下单，中间还差很多东西。</p>
+<h2>先选底座，再谈页面好不好看</h2>
+<p>店主和开发者说的“好用”，通常不是一回事。</p>
+<p>如果你的目标是尽快开始卖货，Shopify 会省事很多。商品、库存、订单和结账都在后台维护，主题负责把它们展示出来。换图片、改价格、增加规格，不需要钻进代码。</p>
+<p>Next.js 给你的自由更多。页面、数据和部署方式都可以自己控制，适合学习、二次开发和品牌原型。</p>
+<p>但它的自由也有价格。</p>
+<p>模板现在包含商品列表、详情页、本地购物车、响应式页面、政策页、sitemap、robots 和 JSON-LD。它看起来像一个商店，但还不能假装自己是一套完整交易系统。</p>
+<p>正式收款之前，你仍然要接入并测试支付、订单、库存、客户数据库、税费、运费、退款、邮件通知和反欺诈。</p>
+<p>所以选择很直接：</p>
+<ul>
+<li>想把精力放在商品和经营上，先用 Shopify。</li>
+<li>想学代码、改代码或完全掌控前端，再用 Next.js。</li>
+</ul>
+<p>技术栈更复杂，不代表它更适合你。最后多维护的每一项，都要花自己的时间。</p>
+<h2>模板帮你跳过搭架子，不能替你验收</h2>
+<p>模板最大的价值，是让你不用从空白页面开始。</p>
+<p>首页、商品页、购物车、政策页和移动端布局已经有了。接下来替换品牌、商品和图片就行。</p>
+<p>但模板不知道你的真实库存，也不知道你几天发货、运费怎么算、哪些商品可以退。它不会替你保证用户切换规格后，购物车里的图片和价格仍然正确。</p>
+<p>这些事看起来不酷，却直接决定商店能不能用。</p>
+<p>发布前，至少要用访客身份走完一次：</p>
+<ol>
+<li>从首页找到商品；</li>
+<li>进入商品详情；</li>
+<li>切换规格和图片；</li>
+<li>加入购物车；</li>
+<li>进入结账；</li>
+<li>检查配送、退货、隐私和服务条款。</li>
+</ol>
+<p>电脑上通过以后，手机还要重新走一遍。</p>
+<p>很多问题只会出现在窄屏：按钮被遮挡、图片裁掉一半、规格不好点，或者购物车抽屉关不掉。</p>
+<p>页面能打开，只说明 Demo 跑通了。购买路径完整通过，才接近可以上线。</p>
+<h2>AI 可以重拍商品，不能重做商品</h2>
+<p>页面搭好以后，下一个问题通常是商品图。</p>
+<p>手里的照片背景不同、光线不同、比例也不同。用 AI 统一视觉很方便，但商品图不能只追求“看起来不错”。</p>
+<p>真实手柄有两个接口，AI 画成三个；包装里没有底座，生成图却多出一个底座。图可能更精致了，商品却已经不是你真正卖的那个东西。</p>
+<p>所以我在 Image 教程里先给商品加了一把“真实性锁”。</p>
+<p>每个商品至少准备三类照片：正面或 45 度、背面或接口细节、包装和配件。提示词先要求模型保留轮廓、按钮、接口、Logo、颜色、配件和线材，只允许调整背景、灯光、阴影和构图。</p>
+<p>先生成一张 1:1 主图，放大检查按钮、接口、螺丝、文字和配件。确认结构没错，再做其他颜色、细节图、16:9 桌面 Hero 和 4:5 手机 Hero。</p>
+<p>如果第一张已经画错，不要继续润色。回到参考图重来，通常更省时间。</p>
+<p>说白了，AI 在这里应该像摄影棚，不应该像产品设计师。</p>
+<h2>“开箱即用”只能省时间，不能转移责任</h2>
+<p>做完这两套模板以后，我对“开箱即用”四个字更谨慎了。</p>
+<p>模板可以让页面很快出现，让商品像是已经摆进店里。但支付是否真的走得通、库存会不会卖错、政策是否符合实际经营、手机用户能不能顺利结账，最后还是要由准备上线的人确认。</p>
+<p>这不代表模板没用。</p>
+<p>模板把重复的搭建工作压缩掉，你才能把时间花在商品、内容、测试和经营上。</p>
+<p>只是别把省下来的时间，又浪费在“看起来已经完成”的错觉里。</p>
+<p>页面能打开，只说明演示成功。</p>
+<p>商品、支付、政策和移动端都通过检查，才叫可以上线。</p>
+<h2>两套模板与完整教程</h2>
+<h3>GamePro Free Storefront（Next.js）</h3>
+<ul>
+<li>GitHub：https://github.com/WOOK98/gamepro-free-storefront</li>
+<li>蓝奏云：https://wwbam.lanzoue.com/b032dzty0d</li>
+<li>密码：<code>fckg</code></li>
+</ul>
+<h3>GamePro Free（Shopify Theme）</h3>
+<ul>
+<li>GitHub：https://github.com/WOOK98/gamepro-free-shopify-theme</li>
+<li>蓝奏云：https://wwbam.lanzoue.com/b032dztxzc</li>
+<li>密码：<code>1l5h</code></li>
+</ul>
+<h3>15 页演示与 Image 教程</h3>
+<ul>
+<li>GitHub：https://github.com/WOOK98/gamepro-template-guide</li>
+</ul>
+<p>三个仓库都已经公开。两套模板采用 MIT License。</p>
+<p>下载以后，先看说明，替换自己的素材，再走完一轮测试。</p>
+<p><strong>替换、测试，再上线。</strong></p></article></body></html>
